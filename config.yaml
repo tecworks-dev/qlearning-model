@@ -1,0 +1,35 @@
+train:
+  epochs: 10
+  batch_size: 64
+  learning_rate: 0.001
+  weight_decay: 1e-5
+  gamma: 0.99
+  max_lr: 0.01
+  buffer_size: 10000
+  patience: 5
+  trials: 20
+  timeout: 3600
+  val_split: 0.2
+
+model:
+  img_size: 32
+  patch_size: 4
+  in_chans: 3
+  num_classes: 10
+  embed_dim: 256
+  depths: [2, 2, 6, 2]
+  num_heads: [3, 6, 12, 24]
+  window_size: 7
+  mlp_ratio: 4.0
+  dropout_rate: 0.1
+
+logging:
+  level: INFO
+  tensorboard: true
+
+augmentation:
+  resize: 32
+  random_horizontal_flip: true
+  random_rotation: 10
+  normalize_mean: [0.5, 0.5, 0.5]
+  normalize_std: [0.5, 0.5, 0.5]
